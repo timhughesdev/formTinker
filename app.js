@@ -1,11 +1,11 @@
-let firstNameInput = document.querySelector("#newUserFirstName");
-let lastNameInput = document.querySelector("#newUserLastName");
+let firstNameInput = document.querySelector("#new-user-first-name");
+let lastNameInput = document.querySelector("#new-user-last-name");
 // I added the same age input from the codeingsandbox to test
 let ageInput = document.querySelector("#age");
 // I added the same age input from the codeingsandbox to test
-let emailInput = document.querySelector("#newUserEmail");
-let passWordInput = document.querySelector("#newUserPassWord");
-let saveNewUserButton = document.querySelector("#saveNewUserButton");
+let emailInput = document.querySelector("#new-user-email");
+let passWordInput = document.querySelector("#new-user-password");
+let saveNewUserButton = document.querySelector("#save-new-user-button");
 //Changed const to let as well as tried to put add ^^ variables ^^ to the inside of the saveButtonClicked().
 const saveButtonClicked = () => {
   let user = {
@@ -16,17 +16,17 @@ const saveButtonClicked = () => {
     email: emailInput.value,
     password: passWordInput.value,
     // I added the same age input from the codeingsandbox to test
-    // isOver18: function () {
-    //   if (this.age >= 18) {
-    //     console.log("You may enter");
-    //     return;
-    //   }
-    //   console.log("You are not of age to be here");
-    // },
+    isOver18: function () {
+      if (this.age >= 18) {
+        console.log("You may enter");
+        return;
+      }
+      console.log("You are not of age to be here");
+    },
     // method to determine password is greater than 4. console.log the result
     isPasswordLongEnough: function () {
-      if (this.passWord >= 4) {
-        console.log("good to go");
+      if (this.password >= 4) {
+        console.log("password is good to go");
         return;
       }
       console.log("need a better password");
@@ -36,6 +36,7 @@ const saveButtonClicked = () => {
   //   user.isOver18();
   // I added the same age input from the codeingsandbox to test
   user.isPasswordLongEnough();
+  user.isOver18();
 };
 saveNewUserButton.addEventListener("click", saveButtonClicked);
 
